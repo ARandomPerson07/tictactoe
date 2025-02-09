@@ -24,6 +24,8 @@ The project will create, using NumPy, Plotly-Dash, and NetworkX, a graph of all 
 - In reality, most situations (and board games) can have cyclical paths, which massively increases the complexity of possible states.
 - There are ultimately far too many nodes and edges to visualize at once, so the graph will likely get messy. This is alleviated somewhat by the design of the webapp.
 
+---
+
 ## Overview
 ### Files
 - `tictactoe_graph.py` contains the `get_graph()` function, which returns the `NetworkX.DiGraph` object that contains the graph of all possible tic-tac-toe board states. Simply do `from tictactoe_graph import get_graph` to use it
@@ -36,6 +38,10 @@ The project will create, using NumPy, Plotly-Dash, and NetworkX, a graph of all 
 - Click on a board state to focus on it. The node will become the new root of the graph, and the webpage will only show you possible board states from that position
 - Click the "back" button to view the entire graph again
 - To exit, close the tab in your browser and `Ctrl-C` on the terminal you used to run `tictactoedash.py`
+### AI Opponent
+- Provide a comma-delimited set of 9 integers to the script `aiopponent.py` using the "board" argument, e.g. `python3 aiopponent.py --board 0,0,0,0,0,0,0,0,0`
+- Output will give the AI's move as well as the rating for that move
+---
 
 ## Implementation
 
