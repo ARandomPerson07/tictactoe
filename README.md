@@ -61,7 +61,21 @@ Using `Dash`, we can directly convert the `NetworkX` graph into a renderable ele
 
 Finally, we add some callbacks to the webapp so that clicking a node shows the subgraph with it as the root, and add the back button to reset the view.
 
+### AI Opponent
+The AI Opponent uses a simple recursive minimax algorithm to determine the desirability of a move. Given a board state, the AI will assume it is the turn player, and assign 1 to states where it is always winning, 0 to states where it always loses, and 0.5 to forced draws. The minimax algorithm takes advantage of a backwards propagation from known win-states.
+
+Tic-tac-toe AI can use the minimax algorithm easily due to clear winning and losing states, and a short maximum depth. For more advanced board games, a neural network training on heuristic criteria may be more apt, but that is outside the scope of this project.
+
 ## Result
 ### Visualisation
+The full graph:
+![The full visualisation](https://github.com/user-attachments/assets/93c82903-96f6-4c14-9115-40f28e2fe3be)
+A zoomed-in version:
+![First three layers zoomed in](https://github.com/user-attachments/assets/2c155e12-bb08-42f6-a0a7-57a0daed9565)
+A sub-graph starting from the 4th (0-indexed) layer:
+![A smaller, cleaner graph](https://github.com/user-attachments/assets/cf8d536f-a15d-4cc4-84ca-45cee5bab75c)
+
 
 ### AI
+An example of the AI seeing the winning move:
+![The AI sees it is 1's turn, and goes to mark its 3-in-a-row](https://github.com/user-attachments/assets/37880f2d-1fc7-4af8-991e-c94d684aefbd)
